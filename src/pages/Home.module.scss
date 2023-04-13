@@ -1,0 +1,27 @@
+@import "../index.scss";
+
+.home {
+  @extend %container;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 50px;
+
+  button {
+    border: 1px solid white;
+    padding: 20px;
+    background-color: $primary-color;
+    border-radius: 10px;
+    color: $secondary-color;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  button:hover {
+    border: 1px solid $secondary-color;
+    background-color: white;
+    color: $secondary-color;
+  }
+}
