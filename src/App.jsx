@@ -1,12 +1,24 @@
-import './App.scss'
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import "./App.scss";
+import RootLayout from "./pages/RootLayout";
+import Home from "./pages/Home";
+import Error from "./pages/Error";
+import Product from "./pages/Product";
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <RootLayout />,
+      errorElement: <Error />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: "product", element: <Product /> },
+      ],
+    },
+  ]);
 
-  return (
-    <div className="App">
-     <h1>Nasnav Task</h1>
-    </div>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;

@@ -1,0 +1,19 @@
+@import "../index.scss";
+
+.category-nav {
+  @extend %container;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0px 0.73px 2px #00000080;
+  font-weight: bold;
+  height: 64px;
+
+  ul {
+    display: flex;
+    gap: 4px;
+  }
+  li:not(:last-child) {
+    text-decoration: underline;
+  }
+}

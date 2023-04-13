@@ -1,4 +1,4 @@
-//Fonts
+//Google Fonts
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap");
 
 //Global Colors
@@ -6,9 +6,29 @@ $primary-color: #fff100;
 $secondary-color: #542e90;
 $third-color: #f5f5f5;
 
+//Global Fonts
+$font-stack: "Montserrat", sans-serif;
+
+//For Extend/Inheritance
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0rem 10rem;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-stack;
+}
+
+ul {
+  list-style: none;
 }
