@@ -1,0 +1,13 @@
+@import "../index.scss";
+
+.container {
+  @extend %container;
+  h1 {
+    color: $secondary-color;
+    font-size: 28px;
+  }
+  p {
+    color: #575756;
+    margin-top: 5px;
+  }
+}

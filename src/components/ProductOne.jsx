@@ -49,8 +49,8 @@ const ProductOne = () => {
         <div className={classes.size}>
           <p className={classes.title}>Size</p>
           <div>
-            {MAIN_PRODUCT.size.map((size) => (
-              <button>{size}</button>
+            {MAIN_PRODUCT.size.map((size, index) => (
+              <button key={index}>{size}</button>
             ))}
           </div>
         </div>

@@ -1,0 +1,6 @@
+@import "../index.scss";
+
+.container {
+  @extend %container;
+  margin-top: 30px;
+}

@@ -1,0 +1,104 @@
+@import "../index.scss";
+// @extend %flex-center;
+// @extend %container;
+// $secondary-color
+// $primary-color
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 268px;
+  height: 440px;
+  border: 1px solid $third-color;
+  border-radius: 10px;
+
+  img {
+    margin-top: 5px;
+  }
+}
+
+.main-img {
+  position: relative;
+
+  div {
+    img {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 7px;
+      left: 7px;
+      background-color: white;
+      padding: 7px;
+      border-radius: 7px;
+    }
+  }
+}
+
+.card-body {
+  padding: 10px 20px;
+
+  h2 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #1d1d1b;
+  }
+
+  h3 {
+    color: $secondary-color;
+    font-size: 20px;
+    margin-top: 7px;
+    span {
+      font-size: 14px;
+    }
+  }
+}
+
+.section-two {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.price {
+  del {
+    color: #a7a9ac;
+    font-weight: bold;
+  }
+
+  h6 {
+    text-align: center;
+    background-color: $primary-color;
+    width: 52px;
+    padding: 3px;
+    font-size: 14px;
+    border-radius: 3px;
+    display: inline;
+    margin-left: 10px;
+  }
+}
+
+.rate {
+  @extend %flex-center;
+  margin: 10px 0;
+  gap: 10px;
+  .stars {
+    display: flex;
+    gap: 5px;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+h5 {
+  @extend %flex-center;
+  font-weight: 600;
+  font-size: 10px;
+  span {
+    font-weight: bold;
+    font-size: 12px;
+  }
+}
