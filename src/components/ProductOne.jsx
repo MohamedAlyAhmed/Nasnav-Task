@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./ProductOne.module.scss";
 import { MAIN_PRODUCT } from "../services/DummyMainProduct";
+import Cart from "./Cart";
 
 const ProductOne = () => {
   return (
     <main className={classes["main-product"]}>
       <section className={classes["product-imgs"]}>
         <div>
-          <img src="images/main-img.PNG" alt="main product image" />
+          <img src={MAIN_PRODUCT.img} alt="main product image" />
         </div>
         <div>
           <img src="images/Path 347.png" alt="arrow left" />
@@ -79,6 +80,7 @@ const ProductOne = () => {
           </div>
         </div>
       </section>
+      <Cart />
     </main>
   );
 };

@@ -3,6 +3,7 @@ export const MAIN_PRODUCT = {
   title:
     "Adidas black t-shirt lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
   category: "Men",
+  img:"images/main-img.PNG",
   price: 9.999,
   rate: "4.9",
   "rate-count": 22,

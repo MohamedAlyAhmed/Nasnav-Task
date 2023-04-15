@@ -1,0 +1,218 @@
+@import "../index.scss";
+
+.main-product {
+  @extend %container;
+  display: flex;
+  margin: 60px 0px;
+}
+
+.product-imgs {
+  width: 50%;
+
+  div:first-child {
+    height: 80%;
+
+    img {
+      width: 100%;
+      max-height: 100%;
+      object-fit: fill;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+
+  div:last-child {
+    @extend %flex-center;
+    justify-content: space-between;
+    height: 20%;
+  }
+}
+
+.product-details {
+  width: 50%;
+  padding: 0 40px;
+
+  .main-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+
+    .category {
+      font-weight: bold;
+      color: #a7a9ac;
+    }
+
+    .rate {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      p {
+        font-weight: bold;
+      }
+
+      div {
+        font-size: 15px;
+        color: #575756;
+      }
+      .star {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    .price {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 20px;
+      h2 {
+        color: $secondary-color;
+        font-weight: bold;
+        font-size: 30px;
+        span {
+          font-size: 20px;
+          font-weight: 700;
+        }
+      }
+
+      del {
+        color: #a7a9ac;
+        font-weight: bold;
+      }
+      h4 {
+        background-color: $primary-color;
+        width: 4.5rem;
+        padding: 7px;
+        font-size: 14px;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.size {
+  margin: 20px 0;
+  div {
+    margin: 20px 0;
+  }
+
+  button {
+    border: none;
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #d9d9d9;
+    border-radius: 30px;
+    color: $secondary-color;
+    font-weight: 700;
+    font-size: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 10px;
+  }
+  button:hover {
+    border: 1px solid #ececec;
+    background-color: #ececec;
+    color: black;
+  }
+}
+
+.line {
+  height: 1.5px;
+  background-color: #d9d9d9;
+  border: none;
+}
+.color {
+  margin: 20px 0;
+  img {
+    border: 1px solid white;
+    margin-top: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  img:hover {
+    border: 1px solid $secondary-color;
+    border-radius: 50px;
+  }
+}
+
+.quantity {
+  margin: 20px 0;
+  div {
+    margin: 20px 0;
+  }
+
+  .btn-quantity {
+    border: none;
+    background-color: #f5f5f5;
+    border: 1px solid #d9d9d9;
+    width: 252px;
+    height: 48px;
+    border-radius: 24px;
+    color: $secondary-color;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      @extend %flex-center;
+      font-weight: bold;
+      font-size: 20px;
+      width: 37.33px;
+      height: 37.33px;
+      background-color: $primary-color;
+      border-radius: 50%;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    span:hover {
+      background-color: $secondary-color;
+      color: $primary-color;
+    }
+    span:first-child {
+      margin-left: 10px;
+    }
+    span:last-child {
+      margin-right: 10px;
+    }
+  }
+}
+
+.btn-action {
+  display: flex;
+  gap: 10px;
+  button {
+    border: none;
+    width: 252px;
+    height: 54px;
+    border-radius: 27px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  button:first-child {
+    background-color: $secondary-color;
+    color: white;
+    transition: 0.3s;
+  }
+  button:first-child:hover {
+    background-color: #7149b3;
+  }
+
+  button:last-child {
+    background-color: $primary-color;
+    transition: 0.3s;
+  }
+  button:last-child:hover {
+    background-color: #fff871;
+  }
+}

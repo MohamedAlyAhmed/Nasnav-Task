@@ -20,8 +20,6 @@ const ProductSlider = () => {
       <Swiper
         spaceBetween={90}
         slidesPerView={4}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
       >
         {productCard}
       </Swiper>
