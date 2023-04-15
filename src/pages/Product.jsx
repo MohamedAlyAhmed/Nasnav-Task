@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import CategoryNav from "../components/CategoryNav";
 import ProductSlider from "../components/ProductSlider";
 import classes from "./Product.module.scss";
@@ -6,6 +6,7 @@ import MainProduct from "../components/MainProduct";
 import MainNav from "../components/MainNav";
 import FirstNav from "./../components/FirstNav";
 import SecondNav from "./../components/SecondNav";
+import Footer from "../components/Footer";
 
 class Product extends Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class Product extends Component {
 
   render() {
     return (
-      <>
+      <Fragment>
         <FirstNav />
         <MainNav
           count={this.state.countQuantity}
@@ -41,7 +42,8 @@ class Product extends Component {
           <p>You may like these products also</p>
         </div>
         <ProductSlider />
-      </>
+        <Footer/>
+      </Fragment>
     );
   }
 }
