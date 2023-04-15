@@ -2,8 +2,13 @@ import React from "react";
 import classes from "./Cart.module.scss";
 import CartItem from "./CartItem";
 
-const Cart = ({ items, quantity }) => {
+const Cart = ({ onChildData, items, quantity }) => {
   console.log("Cart Render");
+  function handleClose() {
+    const isShown = false;
+    onChildData(isShown);
+  }
+
   const productCard = items.map((item) => (
     <CartItem key={item.id} product={item} quantity={quantity} />
   ));
@@ -11,9 +16,17 @@ const Cart = ({ items, quantity }) => {
   return (
     <div className={classes.cart}>
       <div className={classes["cart-container"]}>
+        <img
+          className={classes.close}
+          onClick={handleClose}
+          src="images/Group 1440.png"
+          alt="close button"
+        />
         <div className={classes["cart-body"]}>
           <h2>My Cart</h2>
+
           <h3>Cart Summary</h3>
+
           {productCard}
           {items.length > 0 ? (
             <div className={classes["cart-btn"]}>

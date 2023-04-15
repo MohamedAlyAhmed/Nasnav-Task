@@ -162,6 +162,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .btnOne {
+      border: none;
+      @extend %flex-center;
+      font-weight: bold;
+      font-size: 20px;
+      width: 37.33px;
+      height: 37.33px;
+      background-color: $primary-color;
+      border-radius: 50%;
+      transition: 0.3s;
+
+      margin-left: 10px;
+    }
+    .btnOne:hover:not([disabled]) {
+      background-color: $secondary-color;
+      color: $primary-color;
+    }
+    .btnOne:hover:not([disabled]) {
+      cursor: pointer;
+    }
 
     span {
       @extend %flex-center;

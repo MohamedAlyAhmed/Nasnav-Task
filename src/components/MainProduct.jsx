@@ -10,10 +10,20 @@ export class MainProduct extends Component {
     this.state = {
       items: [],
       quantity: 1,
+      dataFromChild: false,
     };
+    this.handleChildData = this.handleChildData.bind(this);
+  }
+
+  handleChildData(data) {
+    this.setState({
+      dataFromChild: data,
+    });
   }
 
   addToCartHandler = (product) => {
+    // console.log(product);
+    this.setState({ dataFromChild: true });
     if (this.state.items.length === 0) {
       this.setState({ items: [...this.state.items, product] });
     }
@@ -94,9 +104,23 @@ export class MainProduct extends Component {
             <p className={classes.title}>Quantity</p>
             <div>
               <button className={classes["btn-quantity"]}>
-                <span>-</span>
-                <div>1</div>
-                <span>+</span>
+                <button
+                  className={classes.btnOne}
+                  disabled={this.state.quantity === 1}
+                  onClick={() => {
+                    this.setState({ quantity: this.state.quantity - 1 });
+                  }}
+                >
+                  -
+                </button>
+                <div>{this.state.quantity}</div>
+                <span
+                  onClick={() => {
+                    this.setState({ quantity: this.state.quantity + 1 });
+                  }}
+                >
+                  +
+                </span>
               </button>
             </div>
             <div className={classes["btn-action"]}>
@@ -107,7 +131,13 @@ export class MainProduct extends Component {
             </div>
           </div>
         </section>
-        <Cart items={this.state.items} quantity={this.state.quantity} />
+        {this.state.dataFromChild && (
+          <Cart
+            onChildData={this.handleChildData}
+            items={this.state.items}
+            quantity={this.state.quantity}
+          />
+        )}
         {/* <div style={{ display: 'flex' }}><MainNav quantity={this.state.quantity}/></div> */}
       </main>
     );
