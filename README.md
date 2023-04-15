@@ -3,6 +3,7 @@
 Our Yeshtery App is a web application that allows users to add to a cart.
 
 ## Live Demo
+[Click me to go to Live Demo](https://nasnav-task.vercel.app/)
 
 ## 🚀 Getting Started
 
