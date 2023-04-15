@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import classes from "./Cart.module.scss";
 import CartItem from "./CartItem";
 
@@ -12,31 +12,35 @@ const Cart = ({ onChildData, items, quantity }) => {
   ));
 
   return (
-    <div className={classes.cart}>
+    <Fragment>
+    <div className={classes.cart} onClick={handleClose}>
+
+    </div>
+
       <div className={classes["cart-container"]}>
-        <img
-          className={classes.close}
-          onClick={handleClose}
-          src="images/Group 1440.png"
-          alt="close button"
-        />
-        <div className={classes["cart-body"]}>
-          <h2>My Cart</h2>
+      <img
+        className={classes.close}
+        onClick={handleClose}
+        src="images/Group 1440.png"
+        alt="close button"
+      />
+      <div className={classes["cart-body"]}>
+        <h2>My Cart</h2>
 
-          <h3>Cart Summary</h3>
+        <h3>Cart Summary</h3>
 
-          {productCard}
-          {items.length > 0 ? (
-            <div className={classes["cart-btn"]}>
-              <button>Review Cart</button>
-              <button>Complete Checkout</button>
-            </div>
-          ) : (
-            "Cart is empty"
-          )}
-        </div>
+        {productCard}
+        {items.length > 0 ? (
+          <div className={classes["cart-btn"]}>
+            <button>Review Cart</button>
+            <button>Complete Checkout</button>
+          </div>
+        ) : (
+          "Cart is empty"
+        )}
       </div>
     </div>
+    </Fragment>
   );
 };
 
