@@ -19,11 +19,10 @@ export class MainProduct extends Component {
     this.setState({
       dataFromChild: data,
     });
+    this.props.onData(this.state.quantity, false);
   }
 
   addToCartHandler = (product) => {
-    // console.log(product);
-    this.setState({ dataFromChild: true });
     if (this.state.items.length === 0) {
       this.setState({ items: [...this.state.items, product] });
     }
@@ -38,7 +37,6 @@ export class MainProduct extends Component {
   };
 
   render() {
-    console.log("Product Render");
     return (
       <main className={classes["main-product"]}>
         <section className={classes["product-imgs"]}>
@@ -54,7 +52,6 @@ export class MainProduct extends Component {
             <img src="images/Path 346.png" alt="arrow right" />
           </div>
         </section>
-
         <section className={classes["product-details"]}>
           <div className={classes["main-details"]}>
             <div>
@@ -131,14 +128,15 @@ export class MainProduct extends Component {
             </div>
           </div>
         </section>
-        {this.state.dataFromChild && (
+        {this.state.dataFromChild || this.props.isShown ? (
           <Cart
             onChildData={this.handleChildData}
             items={this.state.items}
             quantity={this.state.quantity}
           />
+        ) : (
+          ""
         )}
-        {/* <div style={{ display: 'flex' }}><MainNav quantity={this.state.quantity}/></div> */}
       </main>
     );
   }

@@ -3,10 +3,8 @@ import classes from "./Cart.module.scss";
 import CartItem from "./CartItem";
 
 const Cart = ({ onChildData, items, quantity }) => {
-  console.log("Cart Render");
   function handleClose() {
-    const isShown = false;
-    onChildData(isShown);
+    onChildData(false);
   }
 
   const productCard = items.map((item) => (

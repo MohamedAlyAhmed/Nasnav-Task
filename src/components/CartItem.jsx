@@ -7,7 +7,7 @@ const CartItem = ({ product, quantity }) => {
     <Fragment>
       <div className={classes.product}>
         <p>
-          <img src={product.img} alt="" />
+          <img src={product.img} alt="product" />
         </p>
         <div className={classes["product-details"]}>
           <p>{product.title}</p>
