@@ -1,47 +1,39 @@
 import React, { Component } from "react";
 import classes from "./MainProduct.module.scss";
-import { MAIN_PRODUCT } from "../services/DummyMainProduct";
-import Cart from "./Cart";
-import MainNav from "./MainNav";
+// import { MAIN_PRODUCT } from "../services/DummyMainProduct";
+import { DUMMY_PRODUCT } from "../services/DummyProducts";
 
-export class MainProduct extends Component {
+export class ProductDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [],
-      quantity: 1,
-      dataFromChild: false,
+      productId: this.props.productId,
+      quantityCount: 1,
     };
-    this.handleChildData = this.handleChildData.bind(this);
   }
 
-  handleChildData(data) {
-    this.setState({
-      dataFromChild: data,
-    });
-    this.props.onData(this.state.quantity, false);
-  }
+  addToCartHandler = (pr) => {
+    const productQuantity = this.state.quantityCount;
+    this.props.receiveProduct(pr, productQuantity);
+  };
 
-  addToCartHandler = (product) => {
-    if (this.state.items.length === 0) {
-      this.setState({ items: [...this.state.items, product] });
-    }
-    if (this.state.items.length > 0) {
-      const isSameProduct = this.state.items.map(
-        (item) => item.id === product.id
-      );
-      if (isSameProduct) {
-        this.setState({ quantity: this.state.quantity + 1 });
-      }
-    }
+  increaseCount = () => {
+    this.setState({ quantityCount: this.state.quantityCount + 1 });
+  };
+
+  decreaseCount = () => {
+    this.setState({ quantityCount: this.state.quantityCount - 1 });
   };
 
   render() {
+    const ProductData = DUMMY_PRODUCT.find(
+      (product) => product.id === this.props.productId
+    );
     return (
       <main className={classes["main-product"]}>
         <section className={classes["product-imgs"]}>
           <div>
-            <img src={MAIN_PRODUCT.img} alt="main product image" />
+            <img src={ProductData.img} alt="main product image" />
           </div>
           <div>
             <img src="images/Path 347.png" alt="arrow left" />
@@ -57,8 +49,8 @@ export class MainProduct extends Component {
             <div>
               <img src="images/Group 346.png" alt="brand logo" />
             </div>
-            <p className={classes.title}>{MAIN_PRODUCT.title}</p>
-            <p className={classes.category}>{MAIN_PRODUCT.category}</p>
+            <p className={classes.title}>{ProductData.title}</p>
+            <p className={classes.category}>{ProductData.category}</p>
             <div className={classes.rate}>
               <div className={classes.star}>
                 <img src="images/Path 368.png" alt="star" />
@@ -67,22 +59,22 @@ export class MainProduct extends Component {
                 <img src="images/Path 368.png" alt="star" />
                 <img src="images/Path 369.png" alt="star" />
               </div>
-              <p>{MAIN_PRODUCT.rate} of 5</p>
-              <div>{MAIN_PRODUCT["rate-count"]} Rates</div>
+              <p>{ProductData.rate} of 5</p>
+              <div>{ProductData["rate-count"]} Rates</div>
             </div>
             <div className={classes.price}>
               <h2>
-                {MAIN_PRODUCT.price} <span>LE</span>
+                {ProductData.price} <span>LE</span>
               </h2>
-              {MAIN_PRODUCT.disscount && <del>9.999 LE</del>}
-              {MAIN_PRODUCT.disscount && <h4>{MAIN_PRODUCT.disscount}% Off</h4>}
+              {ProductData.disscount && <del>9.999 LE</del>}
+              {ProductData.disscount && <h4>{ProductData.disscount}% Off</h4>}
             </div>
           </div>
           <hr className={classes.line} />
           <div className={classes.size}>
             <p className={classes.title}>Size</p>
             <div>
-              {MAIN_PRODUCT.size.map((size, index) => (
+              {ProductData.size.map((size, index) => (
                 <button key={index}>{size}</button>
               ))}
             </div>
@@ -100,42 +92,29 @@ export class MainProduct extends Component {
           <div className={classes.quantity}>
             <p className={classes.title}>Quantity</p>
             <div>
-              <button className={classes["btn-quantity"]}>
+              <div className={classes["btn-quantity"]}>
                 <button
+                  onClick={this.decreaseCount}
+                  disabled={this.state.quantityCount === 1}
                   className={classes.btnOne}
-                                  
                 >
                   -
                 </button>
-                <div>0</div>
-                <span
-                 
-                >
-                  +
-                </span>
-              </button>
+                <div>{this.state.quantityCount}</div>
+                <span onClick={this.increaseCount}>+</span>
+              </div>
             </div>
             <div className={classes["btn-action"]}>
-              <button onClick={() => this.addToCartHandler(MAIN_PRODUCT)}>
+              <button onClick={() => this.addToCartHandler(ProductData)}>
                 Add To Cart
               </button>
               <button>Pickup From Store</button>
             </div>
           </div>
         </section>
-        {this.state.dataFromChild || this.props.isShown ? (
-          <Cart
-            onChildData={this.handleChildData}
-            items={this.state.items}
-            quantity={this.state.quantity}
-          />
-        ) : (
-          ""
-        )}
       </main>
-
     );
   }
 }
 
-export default MainProduct;
+export default ProductDetails;

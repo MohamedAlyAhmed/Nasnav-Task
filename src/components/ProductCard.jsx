@@ -1,9 +1,10 @@
 import React from "react";
 import classes from "./ProductCard.module.scss";
+import { Link } from "react-router-dom";
 
-const ProductCard = ({ data }) => {
+const ProductCard = ({ data, recieveProductData }) => {
   return (
-    <div className={classes.card}>
+    <div className={classes.card} onClick={() => recieveProductData(data.id)}>
       <div className={classes["main-img"]}>
         <img src={data.img} alt="product image" />
         <div>

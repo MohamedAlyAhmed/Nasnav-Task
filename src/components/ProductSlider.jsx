@@ -7,15 +7,23 @@ import "swiper/css";
 import "swiper/css/pagination";
 import classes from "./ProductSlider.module.scss";
 
-const ProductSlider = () => {
+const ProductSlider = ({recieveId}) => {
+
+  const recieveProductData = (id)=> {
+     //Receive Data From Product Card
+    console.log("Product Sent To ProductPage" + id);
+    //Send Data For Product Page
+    recieveId(id)
+  }
+
   const productCard = DUMMY_PRODUCT.map((product) => (
     <SwiperSlide key={product.id}>
-      <ProductCard data={product} />
+      <ProductCard data={product} recieveProductData={recieveProductData} />
     </SwiperSlide>
   ));
 
   return (
-    <div className={classes.container}>
+    <div className={classes.container} >
       <Swiper
         spaceBetween={90}
         slidesPerView={4}

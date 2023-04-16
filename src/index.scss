@@ -33,6 +33,21 @@ ul {
   list-style: none;
 }
 
+//Scroll bar Style
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $secondary-color;
+}
+
+//Swiper styles
+
 .swiper-pagination-progressbar-fill {
   background-color: $secondary-color !important;
 }

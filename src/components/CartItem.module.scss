@@ -6,6 +6,7 @@
   height: 120px;
   border: 0.75px solid #ececec;
   border-radius: 7px;
+  margin: 7px 0;
 
   p {
     padding: 7px;
@@ -19,10 +20,15 @@
 
 .product-details {
   p {
+    // overflow: hidden;
+    // display: -webkit-box;
+    // -webkit-box-orient: vertical;
+    // -webkit-line-clamp: 2;
+
+    width: 199px;
+    white-space: nowrap;
     overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
   }
   width: 100%;
   span:last-child {
@@ -71,8 +77,17 @@
 }
 
 .price {
-  h3 {
+  padding: 10px;
+  .price-currency {
     display: inline;
     font-size: 14px;
   }
+}
+.removebtn {
+  cursor: pointer;
+}
+
+.removebtn:hover {
+  background-color: $secondary-color !important;
+  color: white !important;
 }
