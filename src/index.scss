@@ -32,3 +32,17 @@ $font-stack: "Montserrat", sans-serif;
 ul {
   list-style: none;
 }
+
+.swiper-pagination-progressbar-fill {
+  background-color: $secondary-color !important;
+}
+
+.swiper-pagination-progressbar {
+  top: 495px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.swiper {
+  padding: 30px 0 !important;
+}
