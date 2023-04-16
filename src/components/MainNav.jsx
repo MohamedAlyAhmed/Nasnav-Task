@@ -2,7 +2,6 @@ import React from "react";
 import classes from "./MainNav.module.scss";
 
 const MainNav = ({ count, showcart }) => {
-
   const showCart = () => {
     showcart(true);
   };

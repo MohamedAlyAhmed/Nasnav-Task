@@ -6,28 +6,6 @@
   margin: 60px 0px;
 }
 
-.product-imgs {
-  width: 50%;
-
-  div:first-child {
-    height: 80%;
-
-    img {
-      width: 100%;
-      max-height: 100%;
-      object-fit: fill;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-  }
-
-  div:last-child {
-    @extend %flex-center;
-    justify-content: space-between;
-    height: 20%;
-  }
-}
-
 .product-details {
   width: 50%;
   padding: 0 40px;
@@ -162,6 +140,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .btnOne {
+      border: none;
+      @extend %flex-center;
+      font-weight: bold;
+      font-size: 20px;
+      width: 37.33px;
+      height: 37.33px;
+      background-color: $primary-color;
+      border-radius: 50%;
+      transition: 0.3s;
+
+      margin-left: 10px;
+    }
+    .btnOne:hover:not([disabled]) {
+      background-color: $secondary-color;
+      color: $primary-color;
+    }
+    .btnOne:hover:not([disabled]) {
+      cursor: pointer;
+    }
 
     span {
       @extend %flex-center;
@@ -188,31 +186,31 @@
 }
 
 .btn-action {
-    display: flex;
-    gap: 10px;
-    button {
-        border: none;
-        width: 252px;
-        height: 54px;
-        border-radius: 27px;
-        font-weight: bold;
-        font-size: 16px;
-        cursor: pointer;
-    }
-    button:first-child {
-        background-color: $secondary-color;
-        color: white;
-        transition: 0.3s;
-    }
-    button:first-child:hover {
-        background-color: #7149b3;
-    }
+  display: flex;
+  gap: 10px;
+  button {
+    border: none;
+    width: 252px;
+    height: 54px;
+    border-radius: 27px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  button:first-child {
+    background-color: $secondary-color;
+    color: white;
+    transition: 0.3s;
+  }
+  button:first-child:hover {
+    background-color: #7149b3;
+  }
 
-    button:last-child {
-        background-color: $primary-color;
-        transition: 0.3s;
-    }
-    button:last-child:hover {
-        background-color: #fff871;
-    }
+  button:last-child {
+    background-color: $primary-color;
+    transition: 0.3s;
+  }
+  button:last-child:hover {
+    background-color: #fff871;
+  }
 }

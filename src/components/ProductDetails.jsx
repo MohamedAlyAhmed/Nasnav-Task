@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import classes from "./MainProduct.module.scss";
-// import { MAIN_PRODUCT } from "../services/DummyMainProduct";
-import { DUMMY_PRODUCT } from "../services/DummyProducts";
+import classes from "./ProductDetails.module.scss";
+import { DUMMY_PRODUCTS } from "../services/DummyProducts";
+import ProductImageGallery from "./ProductImageGallery";
 
 export class ProductDetails extends Component {
   constructor(props) {
@@ -26,24 +26,12 @@ export class ProductDetails extends Component {
   };
 
   render() {
-    const ProductData = DUMMY_PRODUCT.find(
+    const ProductData = DUMMY_PRODUCTS.find(
       (product) => product.id === this.props.productId
     );
     return (
       <main className={classes["main-product"]}>
-        <section className={classes["product-imgs"]}>
-          <div>
-            <img src={ProductData.img} alt="main product image" />
-          </div>
-          <div>
-            <img src="images/Path 347.png" alt="arrow left" />
-            <img src="images/Group 333.png" alt="product image " />
-            <img src="images/Group 331.png" alt="product image " />
-            <img src="images/Group 329.png" alt="product image" />
-            <img src="images/Group 335.png" alt="product image" />
-            <img src="images/Path 346.png" alt="arrow right" />
-          </div>
-        </section>
+        <ProductImageGallery images={ProductData.img} />
         <section className={classes["product-details"]}>
           <div className={classes["main-details"]}>
             <div>

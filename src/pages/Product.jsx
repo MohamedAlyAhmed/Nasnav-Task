@@ -27,7 +27,7 @@ class Product extends Component {
 
   showProductDetails = (productId) => {
     //Receive Data From Product Slider To Show in Details
-    console.log("RECIVED From Slider" + productId);
+
     //Save Data in State to send To Product Details to Show
     this.setState({ productId: productId });
   };
@@ -58,7 +58,6 @@ class Product extends Component {
   }
 
   render() {
-    console.log("PRODUCT PAGE RENDEER");
     let count = 0;
     for (let i = 0; i < this.state.cartItems.length; i++) {
       const item = this.state.cartItems[i];

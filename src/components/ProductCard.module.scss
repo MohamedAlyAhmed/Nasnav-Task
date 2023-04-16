@@ -21,6 +21,13 @@
 
 .main-img {
   position: relative;
+  .product-img {
+    width: 254px;
+    height: 254px;
+    object-fit: fill;
+    object-fit: cover;
+    border-radius: 7px;
+  }
 
   div {
     img {
