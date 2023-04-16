@@ -40,6 +40,7 @@ Open your web browser and navigate to http://localhost:5173/ to view the applica
 ### Yeshtery App has the following features:
 
 - Add to cart: The user can add a product to the cart.
+- Remove from cart: The user can remove a product from the cart.
 
 ## 💻 Technologies Used
 
@@ -48,3 +49,4 @@ Open your web browser and navigate to http://localhost:5173/ to view the applica
 - React.js
 - React Router
 - Scss
+- Swiperjs
